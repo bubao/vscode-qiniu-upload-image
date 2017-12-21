@@ -130,7 +130,7 @@ function saveClipboardImageToFileAndGetPath(imagePath, cb) {
 
         });
         powershell.stdout.on('data', function (data) {
-            cb(imagePath);
+            cb(data.toString().trim());
         });
     } else if (platform === 'darwin') {
         // Mac
